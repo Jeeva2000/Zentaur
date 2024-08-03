@@ -1,0 +1,42 @@
+# hw definition file for processing by chibios_hwdef.py for the
+# mRo Pixracer board. This is a fmuv4 board
+# MCU class and specific type
+MCU STM32F4xx STM32F427xx
+
+# board ID for firmware load
+APJ_BOARD_ID 11
+
+# crystal frequency
+OSCILLATOR_HZ 24000000
+
+# ChibiOS system timer
+STM32_ST_USE_TIMER 5
+
+# flash size
+FLASH_SIZE_KB 2048
+
+# order of UARTs 
+SERIAL_ORDER OTG1 
+
+PB1 LED_BOOTLOADER OUTPUT
+PE1 LED_ACTIVITY OUTPUT
+define HAL_LED_ON 1
+
+PA9 VBUS INPUT
+
+PA11 OTG_FS_DM OTG1
+PA12 OTG_FS_DP OTG1
+
+PA13 JTMS-SWDIO SWD
+PA14 JTCK-SWCLK SWD
+
+# location of application code
+FLASH_BOOTLOADER_LOAD_KB 16
+
+# bootloader loads at start of flash
+FLASH_RESERVE_START_KB 0
+
+
+PC15 ICM20689_CS CS
+PC2 ICM20948_CS CS
+PD10 FRAM_CS CS SPEED_VERYLOW
